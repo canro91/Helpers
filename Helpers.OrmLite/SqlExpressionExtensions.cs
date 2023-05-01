@@ -1,12 +1,9 @@
 ﻿using ServiceStack.OrmLite;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
 
 namespace Helpers.OrmLite;
 
-public static class SqlExpressionExtensions
+public static partial class SqlExpressionExtensions
 {
     public static SqlExpression<T> Paginate<T>(
         this SqlExpression<T> expression,
