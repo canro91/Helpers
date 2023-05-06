@@ -1,6 +1,6 @@
 # My Cool Helpers
 
-A set of extensions methods and helpers I use. It contains extensions methods for Ormlite's Sql Server provider and ASP.NET Core, among others.
+A set of extensions methods and helpers I use. It contains extensions methods for OrmLite's Sql Server provider, ASP.NET Core, among others.
 
 ## Installation
 
