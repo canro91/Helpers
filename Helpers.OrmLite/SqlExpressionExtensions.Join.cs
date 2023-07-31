@@ -52,7 +52,9 @@ public static partial class SqlExpressionExtensions
         var originalCondition = expression.Visit(joinExpr).ToString();
 
         var definition = ModelDefinition<TSubquery>.Definition;
-        var aliasCondition = originalCondition!.Replace(definition.Alias, subqueryAlias);
+        var aliasCondition = definition.Alias == null
+                                ? originalCondition
+                                : originalCondition!.Replace(definition.Alias, subqueryAlias);
 
         // For example,
         // LEFT JOIN (SELECT Column1 FROM ...) cte ON parent.Id = cte.parentId
