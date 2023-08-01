@@ -23,6 +23,14 @@ public static partial class SqlExpressionExtensions
     public static SqlExpression<T> WhereIf<T>(
         this SqlExpression<T> expression,
         bool condition,
+        Expression<Func<T, bool>> onTrue)
+    {
+        return condition ? expression.Where(onTrue) : expression;
+    }
+
+    public static SqlExpression<T> WhereIf<T>(
+        this SqlExpression<T> expression,
+        bool condition,
         Expression<Func<T, bool>> onTrue,
         Expression<Func<T, bool>> onFalse)
     {
