@@ -36,4 +36,16 @@ public static class ServiceCollectionExtensions
 
         return self;
     }
+
+    public static ServiceCollection Remove<T>(
+        this ServiceCollection self)
+    {
+        var descriptor = self.FirstOrDefault(d => d.ServiceType == typeof(T));
+        if (descriptor != null)
+        {
+            self.Remove(descriptor);
+        }
+
+        return self;
+    }
 }
